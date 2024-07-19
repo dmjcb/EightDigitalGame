@@ -5,7 +5,7 @@
  * @Email: dmjcb@outlook.com
  * @Date: 2022-09-09 22:57:33
  * @LastEditors: dmjcb
- * @LastEditTime: 2024-07-19 18:09:13
+ * @LastEditTime: 2024-07-20 01:58:36
  */
 
 #ifndef STATE_H
@@ -19,7 +19,7 @@ typedef class State
 public:
     State() = default;
 
-    State(std::string nodeNode, std::string fatherNode, int mGValue, int mHValue);
+    State(std::string node, std::string fatherNode, int g, int h);
 
     const std::string GetNowNode() const;
 
@@ -31,28 +31,25 @@ public:
 
     const int GetHValue() const;
 
-    void SetNowNode(std::string nodeNode);
+    void SetNowNode(std::string node);
 
     void SetFatherNode(std::string fatherNode);
 
-    void SetFValue(int mFValue);
+    void SetFValue(int f);
 
-    void SetGValue(int mGValue);
+    void SetGValue(int g);
 
-    void SetHValue(int mHValue);
+    void SetHValue(int h);
 
-    // 更新父节点与g值
-    void UpdateFatherAndGValue(const std::string &fatherNode, int mGValue);
+    void UpdateFatherAndGValue(const std::string &fatherNode, int g);
 
     bool operator<(const State &s) const;
 
     bool operator==(const State &s) const;
 
 protected:
-    // 当前节点
     std::string mNodeNode;
 
-    // 父节点
     std::string mFatherNode;
 
     int mFValue;

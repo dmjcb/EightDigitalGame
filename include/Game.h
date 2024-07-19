@@ -5,7 +5,7 @@
  * @Email: dmjcb@outlook.com
  * @Date: 2022-09-09 23:00:11
  * @LastEditors: dmjcb
- * @LastEditTime: 2024-07-19 19:27:36
+ * @LastEditTime: 2024-07-20 01:32:34
  */
 #ifndef GAME_H
 #define GAME_H
@@ -33,18 +33,14 @@ public:
 
     ~Game() {}
 
-    bool IsOdevity(std::string startConfiguration, std::string endConfiguration);
+    bool IsOdevity(std::string s1, std::string s2);
 
-    // 更新当前状态
     void UpdateState(State St);
 
-    // 寻找节点的坐标
     int GetNodePos(const std::string &s, const std::vector<State> &v);
 
-    // 设置h值
     int SetWValue(std::string node);
 
-    // 生成路径
     void FindPath();
 
     std::vector<State> mOpenState;
@@ -59,19 +55,19 @@ public:
 
     State m_state;
 
-    // 八数码最初状态,最终状态字符串
+    // 八数码最初状态
     std::string mStartConfiguration;
-
+    // 最终状态
     std::string mEndConfiguration;
 
     // 标志量
     bool mFlag;
 
     // 可移动路径
-    //  0,1,2
-    //  3,4,5
-    //  6,7,8
-    // move[i][j] 代表i能移动到的四个位置(-1代表不可达)
+    // 0,1,2
+    // 3,4,5
+    // 6,7,8
+    // 代表i能移动到的四个位置(-1代表不可达)
     int mRemoveablePos[9][4] = {
         {-1, -1, 1, 3},
         {-1, 0, 2, 4},

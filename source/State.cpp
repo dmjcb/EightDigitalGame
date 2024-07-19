@@ -10,63 +10,63 @@
 
 #include "include/State.h"
 
-State::State(std::string mNodeNode, std::string mFatherNode, int mGValue, int mHValue)
+State::State(std::string node, std::string fatherNode, int g, int h)
 {
-    this->mNodeNode = std::move(mNodeNode);
-    this->mFatherNode = std::move(mFatherNode);
-    this->mFValue = mGValue + mHValue;
-    this->mGValue = mGValue;
-    this->mHValue = mHValue;
+    mNodeNode = std::move(node);
+    mFatherNode = std::move(fatherNode);
+    mFValue = g + h;
+    mGValue = g;
+    mHValue = h;
 }
 
 const std::string State::GetNowNode() const
 {
-    return this->mNodeNode;
+    return mNodeNode;
 }
 
-void State::SetNowNode(std::string mNodeNode)
+void State::SetNowNode(std::string node)
 {
-    this->mNodeNode = mNodeNode;
+    mNodeNode = node;
 }
 
 const std::string State::GetFatherNode() const
 {
-    return this->mFatherNode;
+    return mFatherNode;
 }
 
-void State::SetFatherNode(std::string mFatherNode)
+void State::SetFatherNode(std::string fatherNode)
 {
-    this->mFatherNode = mFatherNode;
+    mFatherNode = fatherNode;
 }
 
 const int State::GetFValue() const
 {
-    return this->mFValue;
+    return mFValue;
 }
 
-void State::SetFValue(int mFValue)
+void State::SetFValue(int f)
 {
-    this->mFValue = mFValue;
+    mFValue = f;
 }
 
 const int State::GetGValue() const
 {
-    return this->mGValue;
+    return mGValue;
 }
 
-void State::SetGValue(int mGValue)
+void State::SetGValue(int g)
 {
-    this->mGValue = mGValue;
+    mGValue = g;
 }
 
 const int State::GetHValue() const
 {
-    return this->mHValue;
+    return mHValue;
 }
 
-void State::SetHValue(int mHValue)
+void State::SetHValue(int h)
 {
-    this->mHValue = mHValue;
+    mHValue = h;
 }
 
 bool State::operator<(const State &s) const
@@ -80,9 +80,9 @@ bool State::operator==(const State &s) const
 }
 
 // 更新父节点和g值
-void State::UpdateFatherAndGValue(const std::string &mFatherNode, int mGValue)
+void State::UpdateFatherAndGValue(const std::string &fatherNode, int g)
 {
-    this->mFatherNode = mFatherNode;
-    this->mFValue = mGValue + this->mHValue;
-    this->mGValue = mGValue;
+    mFatherNode = fatherNode;
+    mFValue = g + mHValue;
+    mGValue = g;
 }

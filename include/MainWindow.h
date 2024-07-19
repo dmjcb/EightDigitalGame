@@ -5,7 +5,7 @@
  * @Email: dmjcb@outlook.com
  * @Date: 2022-09-08 23:03:10
  * @LastEditors: dmjcb
- * @LastEditTime: 2024-07-19 19:54:01
+ * @LastEditTime: 2024-07-20 01:46:30
  */
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -20,6 +20,7 @@
 #include <QDebug>
 #include <QTime>
 
+#include <thread>
 #include <vector>
 #include <windows.h>
 
@@ -39,31 +40,22 @@ public:
 
     ~MainWindow();
 
-    // 清除输入
     void ClearLine(QLineEdit *a[9]);
 
-    // 设置默认输入
     void SetDefaultInput(QString str, QLineEdit *a[9]);
 
-    // 设置输入框状态
-    void SetInputLineStatus(QLineEdit *a[9], bool flag);
+    void SetInputLineStatus(QLineEdit *line[9], bool flag);
 
-    // 将九宫格输入转化为字符串
-    QString SpliceInputStr(QLineEdit *a[9]);
+    QString SpliceInputStr(QLineEdit *line[9]);
 
-    // 产生随机字符串
     std::string CreateRandomStr();
 
-    // 延时函数
     void WaitTime(int times);
 
-    // 输出路径
     void OutputPath(int num);
 
-    // 输出open与close表
     void OuputTable(QTextBrowser text, std::vector<std::string> v);
 
-    // 判断LineEdit的合法性
     bool JudgeInputValidity(QString s);
 
 private slots:
@@ -86,6 +78,7 @@ private slots:
     void on_horizontalSlider_valueChanged(int value);
 
     void on_pathTextBrowser_sourceChanged(const QUrl &arg1);
+
 protected:
     Ui::MainWindow *ui;
 
@@ -97,7 +90,6 @@ protected:
 
     QString mEndInputStr;
 
-    // 记录当前时第几步
     int mRunningStep = 0;
 };
 
