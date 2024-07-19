@@ -55,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->calculatePathButton, SIGNAL(clicked()), this, SLOT(DoClickedCalculatePathButton()));
     connect(ui->displayAfterPathButton, SIGNAL(clicked()), this, SLOT(DoClickedDisplayAfterPathButton));
     connect(ui->displayNextPathButton, SIGNAL(clicked()), this, SLOT(DoClickedDisplayNextPathButton()));
-    connect(ui->clearDisplayButton, SIGNAL(clicked()), this, SLOT(DoClickedAutoOutputButton()));
+    connect(ui->clearDisplayButton, SIGNAL(clicked()), this, SLOT(DoClearDisplayButton()));
     connect(ui->createOriginStatusButton, SIGNAL(clicked()), this, SLOT(DoClickedCreateOriginStatusButton()));
     connect(ui->manualInputButton, SIGNAL(clicked()), this, SLOT(DoClickedManualInputButton()));
     connect(ui->closeAppButton, SIGNAL(clicked()), this, SLOT(DoClickedCloseAppButton()));
