@@ -108,7 +108,7 @@ int Game::GetNodePos(const std::string &s, const std::vector<State> &v)
 
 int Game::SetWValue(std::string node)
 {
-    // 求出当前字符串str中的每个元素str[i]在str中的下标i与str[i]在strend中的下标之差
+    // 求出当前字符串s的每个元素在s中的下标i与s[i]在node中的下标之差
     int sum = 0;
     for (int i = 0; i < 9; i++)
     {

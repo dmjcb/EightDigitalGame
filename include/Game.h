@@ -5,7 +5,7 @@
  * @Email: dmjcb@outlook.com
  * @Date: 2022-09-09 23:00:11
  * @LastEditors: dmjcb
- * @LastEditTime: 2024-07-20 01:32:34
+ * @LastEditTime: 2024-07-20 02:03:21
  */
 #ifndef GAME_H
 #define GAME_H
@@ -53,9 +53,7 @@ public:
 
     std::vector<QString> mCloseTable;
 
-    State m_state;
-
-    // 八数码最初状态
+    // 最初状态
     std::string mStartConfiguration;
     // 最终状态
     std::string mEndConfiguration;

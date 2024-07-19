@@ -1,13 +1,20 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Author: dmjcb
+ * @Email: 
+ * @Date: 2024-07-19 16:11:20
+ * @LastEditors: dmjcb
+ * @LastEditTime: 2024-07-20 02:16:32
+-->
 # QT 八数码项目
+
+> 有问题可联系 dmjcb@outlook.com
 
 ## 运行结果
 
-![](http://cdn.hurra.ltd/img/20201229212524.png)
+![](.img/1.png)
 
-![](http://cdn.hurra.ltd/img/20201229212539.png)
+![](.img/2.png)
 
-![](http://cdn.hurra.ltd/img/20201229212604.png)
-
-## 项目结构
-
-![](http://cdn.hurra.ltd/img/收款码.png)
+![](.img/3.png)
