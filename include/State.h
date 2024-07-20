@@ -35,20 +35,20 @@ public:
 
     void SetFatherNode(std::string fatherNode);
 
-    void SetFValue(int f);
+    void SetFValue(const int f);
 
-    void SetGValue(int g);
+    void SetGValue(const int g);
 
-    void SetHValue(int h);
+    void SetHValue(const int h);
 
-    void UpdateFatherAndGValue(const std::string &fatherNode, int g);
+    void UpdateFatherAndGValue(const std::string &fatherNode, const int g);
 
     bool operator<(const State &s) const;
 
     bool operator==(const State &s) const;
 
 protected:
-    std::string mNodeNode;
+    std::string mNode;
 
     std::string mFatherNode;
 

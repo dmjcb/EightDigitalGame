@@ -12,7 +12,7 @@
 
 State::State(std::string node, std::string fatherNode, int g, int h)
 {
-    mNodeNode = std::move(node);
+    mNode = std::move(node);
     mFatherNode = std::move(fatherNode);
     mFValue = g + h;
     mGValue = g;
@@ -21,12 +21,12 @@ State::State(std::string node, std::string fatherNode, int g, int h)
 
 const std::string State::GetNowNode() const
 {
-    return mNodeNode;
+    return mNode;
 }
 
 void State::SetNowNode(std::string node)
 {
-    mNodeNode = node;
+    mNode = node;
 }
 
 const std::string State::GetFatherNode() const
@@ -44,7 +44,7 @@ const int State::GetFValue() const
     return mFValue;
 }
 
-void State::SetFValue(int f)
+void State::SetFValue(const int f)
 {
     mFValue = f;
 }
@@ -54,7 +54,7 @@ const int State::GetGValue() const
     return mGValue;
 }
 
-void State::SetGValue(int g)
+void State::SetGValue(const int g)
 {
     mGValue = g;
 }
@@ -64,7 +64,7 @@ const int State::GetHValue() const
     return mHValue;
 }
 
-void State::SetHValue(int h)
+void State::SetHValue(const int h)
 {
     mHValue = h;
 }
@@ -76,11 +76,11 @@ bool State::operator<(const State &s) const
 
 bool State::operator==(const State &s) const
 {
-    return s.mNodeNode == mNodeNode;
+    return s.mNode == mNode;
 }
 
 // 更新父节点和g值
-void State::UpdateFatherAndGValue(const std::string &fatherNode, int g)
+void State::UpdateFatherAndGValue(const std::string &fatherNode, const int g)
 {
     mFatherNode = fatherNode;
     mFValue = g + mHValue;

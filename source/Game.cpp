@@ -34,13 +34,13 @@ bool Game::IsOdevity(std::string s1, std::string s2)
 void Game::UpdateState(State state)
 {
     std::stringstream ss;
-    int blackPos = state.GetNowNode().find('0');
+    int blankPos = state.GetNowNode().find('0');
     for (int i = 0; i < 4; i++)
     {
-        if (mRemoveablePos[blackPos][i] != -1)
+        if (mRemoveablePos[blankPos][i] != -1)
         {
             std::string nextStr = state.GetNowNode();
-            std::swap(nextStr[mRemoveablePos[blackPos][i]], nextStr[blackPos]);
+            std::swap(nextStr[mRemoveablePos[blankPos][i]], nextStr[blankPos]);
             if (GetNodePos(nextStr, mCloseState) == -1)
             {
                 int n = GetNodePos(nextStr, mOpenState);
@@ -72,7 +72,7 @@ void Game::UpdateState(State state)
 
             if (nextStr == mEndConfiguration)
             {
-                mFlag = true;
+                mIsFinished = true;
                 return;
             }
         }
@@ -131,11 +131,11 @@ void Game::FindPath()
 
     UpdateState(mOpenState[0]);
 
-    mFlag = false;
+    mIsFinished = false;
 
     while (!mOpenState.empty())
     {
-        if (mFlag)
+        if (mIsFinished)
         {
             break;
         }

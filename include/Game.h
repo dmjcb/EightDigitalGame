@@ -5,7 +5,7 @@
  * @Email: dmjcb@outlook.com
  * @Date: 2022-09-09 23:00:11
  * @LastEditors: dmjcb
- * @LastEditTime: 2024-07-20 02:03:21
+ * @LastEditTime: 2024-07-20 14:13:01
  */
 #ifndef GAME_H
 #define GAME_H
@@ -20,8 +20,6 @@
 #include <algorithm>
 
 #include <QMainWindow>
-#include <QLineEdit>
-#include <QDebug>
 
 // 游戏类
 typedef class Game
@@ -58,8 +56,7 @@ public:
     // 最终状态
     std::string mEndConfiguration;
 
-    // 标志量
-    bool mFlag;
+    bool mIsFinished;
 
     // 可移动路径
     // 0,1,2
