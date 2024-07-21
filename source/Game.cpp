@@ -159,3 +159,8 @@ void Game::FindPath()
     mPath.push_back(mStartConfiguration);
     reverse(mPath.begin(), mPath.end());
 }
+
+void Game::run()
+{
+    FindPath();
+}

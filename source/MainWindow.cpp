@@ -313,7 +313,7 @@ void MainWindow::DoClickedCalculatePathButton()
     mGame.mStartConfiguration = mStartInputStr.toStdString();
     mGame.mEndConfiguration = mEndInputStr.toStdString();
 
-    mGame.FindPath();
+    mGame.run();
 
     QMessageBox::warning(NULL, "警告", "路径已经生成,共" + QString::number(mGame.mPath.size()) + "步");
 
@@ -322,6 +322,7 @@ void MainWindow::DoClickedCalculatePathButton()
     ui->displayNextPathButton->setDisabled(false);
 
     ui->horizontalSlider->setDisabled(false);
+
 
     for (int i = 0, size = this->mGame.mOpenTable.size(); i < size; i++)
     {
@@ -365,15 +366,6 @@ void MainWindow::DoClickedClearDisplayButton()
     ui->pathLabel->setText("");
 }
 
-void MainWindow::on_horizontalSlider_valueChanged(int value)
-{
-    ui->label_7->setText(QString::number(value));
-}
-
-void MainWindow::on_pathTextBrowser_sourceChanged(const QUrl &arg1)
-{
-    ui->pathTextBrowser->moveCursor(QTextCursor::End);
-}
 
 void MainWindow::DoClickedDisplayAfterPathButton()
 {
@@ -407,5 +399,16 @@ void MainWindow::DoClickedCloseAppButton()
     {
         QApplication::exit();
     }
+}
+
+
+void MainWindow::on_horizontalSlider_valueChanged(int value)
+{
+    ui->label_7->setText(QString::number(value));
+}
+
+void MainWindow::on_pathTextBrowser_sourceChanged(const QUrl &arg1)
+{
+    ui->pathTextBrowser->moveCursor(QTextCursor::End);
 }
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

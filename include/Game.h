@@ -12,17 +12,18 @@
 
 #include "include/State.h"
 
-#include <iostream>
 #include <vector>
+#include <iostream>
 #include <sstream>
 #include <utility>
 #include <cstdio>
 #include <algorithm>
 
 #include <QMainWindow>
+#include <QThread>
 
 // 游戏类
-typedef class Game
+typedef class Game: public QThread
 {
 public:
     Game() {}
@@ -40,6 +41,8 @@ public:
     int SetWValue(std::string node);
 
     void FindPath();
+
+    virtual void run() override;
 
     std::vector<State> mOpenState;
 

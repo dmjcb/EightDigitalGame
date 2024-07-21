@@ -20,7 +20,6 @@
 #include <QDebug>
 #include <QTime>
 
-#include <thread>
 #include <vector>
 #include <windows.h>
 
