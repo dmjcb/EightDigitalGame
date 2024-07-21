@@ -48,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->autoOutputPathButton, SIGNAL(clicked()), this, SLOT(DoClickedAutoOutputButton()));
     connect(ui->calculatePathButton, SIGNAL(clicked()), this, SLOT(DoClickedCalculatePathButton()));
-    connect(ui->displayAfterPathButton, SIGNAL(clicked()), this, SLOT(DoClickedDisplayAfterPathButton));
+    connect(ui->displayAfterPathButton, SIGNAL(clicked()), this, SLOT(DoClickedDisplayAfterPathButton()));
     connect(ui->displayNextPathButton, SIGNAL(clicked()), this, SLOT(DoClickedDisplayNextPathButton()));
     connect(ui->clearDisplayButton, SIGNAL(clicked()), this, SLOT(DoClickedClearDisplayButton()));
     connect(ui->createOriginStatusButton, SIGNAL(clicked()), this, SLOT(DoClickedCreateOriginStatusButton()));
@@ -313,7 +313,7 @@ void MainWindow::DoClickedCalculatePathButton()
     mGame.mStartConfiguration = mStartInputStr.toStdString();
     mGame.mEndConfiguration = mEndInputStr.toStdString();
 
-    mGame.run();
+    mGame.FindPath();
 
     QMessageBox::warning(NULL, "警告", "路径已经生成,共" + QString::number(mGame.mPath.size()) + "步");
 

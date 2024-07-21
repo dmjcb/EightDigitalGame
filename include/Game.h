@@ -23,7 +23,7 @@
 #include <QThread>
 
 // 游戏类
-typedef class Game: public QThread
+typedef class Game
 {
 public:
     Game() {}
@@ -41,8 +41,6 @@ public:
     int SetWValue(std::string node);
 
     void FindPath();
-
-    virtual void run() override;
 
     std::vector<State> mOpenState;
 
